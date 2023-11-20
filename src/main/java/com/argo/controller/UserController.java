@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -46,5 +47,23 @@ public class UserController {
     public String dataParam(@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") Date date){
         System.out.println("pojo(json) 参数传递 date ==>" + date);
         return "{'module': 'date param'}";
+    }
+
+    @RequestMapping("/toJsonList")
+    @ResponseBody
+    public List<User> toJsonList(){
+        System.out.println("返回json集合数据");
+        User user1 = new User();
+        user1.setAge(13);
+        user1.setName("testage");
+
+        User user2 = new User();
+        user1.setAge(123);
+        user1.setName("funtv");
+
+        List<User> userList = new ArrayList<User>();
+        userList.add(user2);
+        userList.add(user1);
+        return userList;
     }
 }
