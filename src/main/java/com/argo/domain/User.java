@@ -1,30 +1,41 @@
 package com.argo.domain;
 
-public class User {
-    private String province;
-    private String city;
+public class User {private String name;
+    private int age;
+
+    private Address address;
+
 
     @Override
     public String toString() {
-        return "Address{" +
-                "province='" + province + '\'' +
-                ", city='" + city + '\'' +
+        return "User{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", address=" + address +
                 '}';
     }
 
-    public String getProvince() {
-        return province;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setProvince(String province) {
-        this.province = province;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
-    public String getCity() {
-        return city;
+    public String getName() {
+        return name;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
